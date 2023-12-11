@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple energy bill splitter</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <h1>Energy bill splitter</h1>
+    <p>
+      Input your energy bill total, and choose to divide it up by multiple
+      means!
+    </p>
+    <form>
+      <p>
+        <label id="bill-label"
+          >Bill:
+          <input
+            class="bill-input"
+            type="number"
+            value="0"
+            min="0"
+            aria-labelledby="bill-label" />.<input
+            class="bill-input"
+            type="number"
+            value="0"
+            min="0"
+            aria-labelledby="bill-label"
+        /></label>
+      </p>
+      <p>
+        <label id="people-input-label" for="people-input"
+          >How many people are involved?
+        </label>
+        <input
+          type="number"
+          min="1"
+          id="people-input"
+          value="1"
+          aria-labelledby="people-input-label"
+        />
+      </p>
+      <p id="error-message">Please enter only a number</p>
+    </form>
+    <fieldset>
+      <div>
+        <input
+          id="even-split"
+          type="radio"
+          value="even-split"
+          name="split"
+          aria-labelledby="even-split"
+        />
+        <label class="split-method" for="even-split">Even Split </label>
+      </div>
+      <div>
+        <input
+          id="day-weighted-split"
+          type="radio"
+          value="day-weighted-split"
+          name="split"
+          aria-labelledby="day-weighted-split"
+        />
+        <label class="split-method" for="day-weighted-split"
+          >Day-weighted split
+        </label>
+      </div>
+    </fieldset>
+    <div id="even-split-container" class="container">
+      <p>The total per person is: <span id="even-split-result"></span></p>
+      <button id="even-split-btn" class="btn">Calculate!</button>
+      <br />
+    </div>
+    <div id="day-weighted-split-container" class="container">
+      <form>
+        <div>
+          <p>
+            <input
+              type="number"
+              aria-labelledby="number-of-days"
+              id="days-weighted"
+              min="1"
+            />
+            <label class="split-method" id="number-of-days"
+              >How many days are you weighting over?
+            </label>
+          </p>
+          <br />
+        </div>
+        <button id="day-weighted-split-btn" type="button" class="btn">
+          Calculate!
+        </button>
+        <div id="people-day-input"></div>
+        <div id="people-day-result"></div>
+      </form>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
